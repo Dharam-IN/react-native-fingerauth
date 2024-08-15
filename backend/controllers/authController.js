@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt');
 
 exports.registerUser = async (req, res) => {
     try {
+        console.log("Req body", req.body);
         const { name, email, password, fingerprint } = req.body;
         const user = new User({ name, email, password, fingerprint });
         await user.save();
